@@ -3,7 +3,7 @@ import { createRoot } from "react-dom/client";
 import "./index.css";
 import App from "./App.tsx";
 
-import RequestService from "./views/requestService.tsx";
+import RequestService from "./views/Request-service.tsx";
 
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
@@ -13,7 +13,7 @@ const router = createBrowserRouter([
     element: <App />,
   },
   {
-    path: "/requestService",
+    path: "/request-service",
     element: <RequestService />,
   },
 ]);
