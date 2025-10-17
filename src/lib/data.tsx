@@ -15,7 +15,8 @@ export type Category = {
 export const data: Category[] = [
   {
     name: "Bricolage",
-    description: "Handyman and DIY tasks for your home.",
+    description:
+      "Petits travaux, peinture, électricité, plomberie, reparations",
     icon: (
       <svg
         className="w-6 h-6"
@@ -47,8 +48,9 @@ export const data: Category[] = [
     ],
   },
   {
-    name: "Cleaning",
-    description: "Home and office cleaning services.",
+    name: "Transport",
+    description:
+      "Petits travaux, peinture, électricité, plomberie, reparations",
     icon: (
       <svg
         className="w-6 h-6"
@@ -65,13 +67,26 @@ export const data: Category[] = [
       </svg>
     ),
     types: [
-      { name: "Home Cleaning", services: ["Kitchen", "Bathroom", "Bedroom"] },
-      { name: "Office Cleaning", services: ["Desks", "Floors", "Windows"] },
+      {
+        name: "Jardinier",
+        services: [
+          "Tonte",
+          "Taille de haie",
+          "Ramassage de feuilles",
+          "Nettoyage gouttières",
+          "Autres",
+        ],
+      },
+      {
+        name: "Gros travaux de jardinage",
+        services: ["Jardinage", "Plantes", "Arrosage", "Nettoyage"],
+      },
     ],
   },
   {
-    name: "Plumbing",
-    description: "Fix leaks and install plumbing fixtures.",
+    name: "Jardinage",
+    description:
+      "Petits travaux, peinture, électricité, plomberie, reparations",
     icon: (
       <svg
         className="w-6 h-6"
@@ -88,13 +103,26 @@ export const data: Category[] = [
       </svg>
     ),
     types: [
-      { name: "Repair", services: ["Fix leak", "Unclog drain"] },
-      { name: "Installation", services: ["Install sink", "Install shower"] },
+      {
+        name: "Jardinier",
+        services: [
+          "Tonte",
+          "Taille de haie",
+          "Ramassage de feuilles",
+          "Nettoyage gouttières",
+          "Autres",
+        ],
+      },
+      {
+        name: "Gros travaux de jardinage",
+        services: ["Jardinage", "Plantes", "Arrosage", "Nettoyage"],
+      },
     ],
   },
   {
-    name: "Electrical",
-    description: "Electrical repairs and installations.",
+    name: "Animaux",
+    description:
+      "Petits travaux, peinture, électricité, plomberie, reparations",
     icon: (
       <svg
         className="w-6 h-6"
@@ -111,8 +139,20 @@ export const data: Category[] = [
       </svg>
     ),
     types: [
-      { name: "Repair", services: ["Replace socket", "Fix wiring"] },
-      { name: "Installation", services: ["Install light", "Install fan"] },
+      {
+        name: "Jardinier",
+        services: [
+          "Tonte",
+          "Taille de haie",
+          "Ramassage de feuilles",
+          "Nettoyage gouttières",
+          "Autres",
+        ],
+      },
+      {
+        name: "Gros travaux de jardinage",
+        services: ["Jardinage", "Plantes", "Arrosage", "Nettoyage"],
+      },
     ],
   },
 ];
