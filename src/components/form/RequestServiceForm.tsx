@@ -7,6 +7,7 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
 import type { SubmitHandler } from "react-hook-form";
 import { requestFormSchema } from "../../lib/requestFormSchema";
+import { CategoryCard } from "./CategoryCard";
 
 type FormData = z.infer<typeof requestFormSchema>;
 
@@ -47,43 +48,32 @@ export default function RequestServiceForm() {
       <form onSubmit={handleSubmit(onSubmit)}>
         {currentStep === 0 && (
           <>
-            <div>
+            <div className="mb-5 flex flex-col gap-4">
               <h1 className="text-2xl font-semibold mb-2">
                 Je hebt hulp nodig en wil een aanvraag plaatsen
               </h1>
-              <p>
+              <p className="opacity-60">
                 Plaats je aanvraag in enkele stappen en ontvang snel reacties
                 van dienstverleners in jouw buurt.
               </p>
-              <div className="flex flex-row">
+              <div className="flex flex-row items-center gap-2">
                 <div className="w-4 h-4 bg-neutral-200"></div>
-                <span>Hoe werkt het ?</span>
+                <span className="font-medium text-sm">Hoe werkt het ?</span>
               </div>
             </div>
             <div className="space-y-4">
               <h2 className="text-lg font-semibold mb-2">Select a category</h2>
               <div className="flex flex-col gap-2">
                 {data.map((cat) => (
-                  <label
+                  <CategoryCard
                     key={cat.name}
-                    className="flex items-center justify-between border rounded-lg p-3 cursor-pointer transition hover:bg-gray-100"
-                  >
-                    <input
-                      type="radio"
-                      {...register("category")}
-                      className="hidden"
-                      onChange={() => {
-                        setValue("category", cat, { shouldValidate: true });
-                        nextStep();
-                      }}
-                    />
-                    <div className="w-4 h-4 bg-red-500"></div>
-                    <div className="flex flex-col">
-                      <span>{cat.name}</span>
-                      <span>{cat.description}</span>
-                    </div>
-                    <div className="w-4 h-4 bg-red-500"></div>
-                  </label>
+                    category={cat}
+                    name="category"
+                    register={register}
+                    setValue={setValue}
+                    selected={watch("category")?.name === cat.name}
+                    onSelect={nextStep}
+                  />
                 ))}
               </div>
               {errors.category && (
